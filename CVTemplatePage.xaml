@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App_DBP2"
+             x:Class="App_DBP2.CVTemplatePage"
+             BackgroundColor="#343434">
+
+    <ScrollView>
+        <StackLayout>
+            <!-- Header -->
+            <StackLayout BackgroundColor="#585858" Padding="20" Margin="0,0,0,10">
+                <Label Text="{Binding NombreCompleto}" FontSize="24" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+                <Label Text="{Binding Ocupacion}" FontSize="14" TextColor="#C2BEBE" HorizontalOptions="Center" />
+            </StackLayout>
+            <!-- Sección de fecha de nacimiento -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="FECHA DE NACIMIENTO" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding FechaNacimiento, StringFormat='dd/MM/yyyy'}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+            <!-- Sección de teléfono -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="TELÉFONO" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding Telefono}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+            <!-- Sección de e-mail -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="E-MAIL" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding Email}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+            
+            
+
+            <!-- Sección de nacionalidad -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="NACIONALIDAD" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding Nacionalidad}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+
+            <!-- Sección de nivel de inglés -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="NIVEL DE INGLÉS" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding NivelIngles}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+            <!-- Sección de lenguajes de programación -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="LENGUAJES DE PROGRAMACIÓN" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="C++: {Binding LenguajesProgramacion.CPP}" FontSize="14" TextColor="Black" />
+                <Label Text="C: {Binding LenguajesProgramacion.C}" FontSize="14" TextColor="Black" />
+                <Label Text="Java: {Binding LenguajesProgramacion.Java}" FontSize="14" TextColor="Black" />
+                <Label Text="Python: {Binding LenguajesProgramacion.Python}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+
+            <!-- Sección de aptitudes -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="APTITUDES" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding Aptitudes}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+
+            <!-- Sección de habilidades -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="HABILIDADES" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="Comunicativo: {Binding Habilidades.Comunicativo}" FontSize="14" TextColor="Black" />
+                <Label Text="Pensamiento Crítico: {Binding Habilidades.PensamientoCritico}" FontSize="14" TextColor="Black" />
+                <Label Text="Sociable: {Binding Habilidades.Sociable}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+            <!-- Sección de perfil -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="PERFIL" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="10,20,10,10" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="{Binding Perfil}" FontSize="14" TextColor="Black" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

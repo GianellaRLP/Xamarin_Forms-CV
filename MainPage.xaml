@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App_DBP2"
+             x:Class="App_DBP2.MainPage"
+             BackgroundColor="#343434">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RadioButtonCheckedConverter x:Key="RadioButtonCheckedConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="FORMULARIO CV" 
+                   FontAttributes="Bold" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"
+                   Margin="10" />
+
+            <Label Text="Nombre" />
+            <Entry Text="{Binding Nombre}" />
+
+            <Label Text="Apellido" />
+            <Entry Text="{Binding Apellido}" />
+
+            <Label Text="Fecha de nacimiento" />
+            <DatePicker Date="{Binding FechaNacimiento}" />
+
+            <Label Text="Ocupación" />
+            <Entry Text="{Binding Ocupacion}" />
+
+            <Label Text="Teléfono" />
+            <Entry Text="{Binding Telefono}" />
+
+            <Label Text="E-mail" />
+            <Entry Text="{Binding Email}" />
+
+            <Label Text="Nacionalidad" />
+            <Picker SelectedItem="{Binding Nacionalidad}">
+                <Picker.Items>
+                    <x:String>Perú</x:String>
+                    <x:String>Argentina</x:String>
+                    <x:String>Brasil</x:String>
+                    <x:String>Ecuador</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Nivel de inglés" />
+            <StackLayout>
+                <RadioButton Content="Básico" GroupName="NivelIngles" IsChecked="{Binding NivelIngles, Converter={StaticResource RadioButtonCheckedConverter}, ConverterParameter='Basico'}" />
+                <RadioButton Content="Intermedio" GroupName="NivelIngles" IsChecked="{Binding NivelIngles, Converter={StaticResource RadioButtonCheckedConverter}, ConverterParameter='Intermedio'}" />
+                <RadioButton Content="Avanzado" GroupName="NivelIngles" IsChecked="{Binding NivelIngles, Converter={StaticResource RadioButtonCheckedConverter}, ConverterParameter='Avanzado'}" />
+            </StackLayout>
+
+            <Label Text="Lenguajes de programación" />
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding LenguajesProgramacion.CPP}" />
+                    <Label Text="C++" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding LenguajesProgramacion.C}" />
+                    <Label Text="C" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding LenguajesProgramacion.Java}" />
+                    <Label Text="Java" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding LenguajesProgramacion.Python}" />
+                    <Label Text="Python" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Aptitudes" />
+            <Entry Text="{Binding Aptitudes}" />
+
+            <Label Text="Habilidades" />
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Habilidades.Comunicativo}" />
+                    <Label Text="Comunicativo" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Habilidades.PensamientoCritico}" />
+                    <Label Text="Pensamiento crítico" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Habilidades.Sociable}" />
+                    <Label Text="Sociable" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Perfil" />
+            <Editor Text="{Binding Perfil}" HeightRequest="100" />
+
+            <Button Text="Enviar" Command="{Binding EnviarCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
